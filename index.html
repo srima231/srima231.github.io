@@ -5,322 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Srimathi R | Data Analyst Portfolio</title>
     <style>
-        :root {
-            --primary: #2b4c7e;
-            --secondary: #4a90e2;
-            --dark: #1a252f;
-            --light: #f4f7f6;
-            --text: #333333;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            color: #d1d8e0;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-        }
-
-        .contact-info a {
-            color: #4a90e2;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        section {
-            margin-bottom: 50px;
-        }
-
-        h2 {
-            color: var(--primary);
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 8px;
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-        }
-
-        .summary-text {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            font-size: 1.1rem;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .skills-category {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .skills-category h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            background: #eef2f7;
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--secondary);
-            transition: transform 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-            gap: 10px;
-        }
-
-        .project-header h3 {
-            color: var(--dark);
-            font-size: 1.3rem;
-        }
-
-        .project-badge {
-            background: var(--primary);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
-        .project-card ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .project-card li {
-            margin-bottom: 8px;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 15px;
-        }
-
-        .info-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            color: var(--dark);
-            flex-wrap: wrap;
-        }
-
-        .cert-list {
-            list-style: none;
-        }
-
-        .cert-list li {
-            padding: 10px 15px;
-            background: var(--card-bg);
-            margin-bottom: 8px;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            border-left: 3px solid var(--primary);
-        }
-
-        .resume-section {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 10px 24px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background: var(--primary);
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.2rem; }
-            .contact-info { flex-direction: column; gap: 8px; }
-        }
+        :root { --primary: #2b4c7e; --secondary: #4a90e2; --dark: #1a252f; --light: #f4f7f6; --text: #333333; --card-bg: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--light); color: var(--text); line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%); color: white; text-align: center; padding: 60px 20px; }
+        header h1 { font-size: 2.8rem; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; color: #d1d8e0; }
+        .contact-info { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 15px; font-size: 0.95rem; }
+        .contact-info a { color: #a2c4ff; text-decoration: none; }
+        .container { max-width: 950px; margin: 0 auto; padding: 40px 20px; }
+        section { margin-bottom: 45px; }
+        h2 { color: var(--primary); border-bottom: 3px solid var(--secondary); padding-bottom: 6px; margin-bottom: 20px; }
+        .project-card { background: var(--card-bg); padding: 22px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid var(--secondary); margin-bottom: 20px; }
+        .project-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
+        .project-badge { background: var(--primary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; }
+        .info-card { background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 15px; }
+        .cert-list { list-style: none; }
+        .cert-list li { padding: 10px 15px; background: var(--card-bg); margin-bottom: 8px; border-radius: 6px; }
     </style>
 </head>
 <body>
-
     <header>
         <h1>SRIMATHI R</h1>
         <p>Data Analyst | Python, SQL & Power BI</p>
         <div class="contact-info">
-            <span>📍 Trichy, Tamil Nadu</span>
-            <span>📧 <a href="mailto:srimathiramaraj27@gmail.com">srimathiramaraj27@gmail.com</a></span>
-            <span>📞 6380140128</span>
-            <span>🔗 <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></span>
+            <span>📧 srimathiramaraj27@gmail.com</span>
+            <span>🔗 <a href="https://linkedin.com" target="_blank">LinkedIn</a></span>
         </div>
     </header>
-
     <div class="container">
-        
-        <!-- Professional Summary -->
-        <section id="about">
-            <h2>Professional Summary</h2>
-            <div class="summary-text">
-                <p>B.E. Electrical and Electronics Engineering graduate with hands-on experience in Python, SQL, and Power BI through applied analytics projects. Skilled in data cleaning, dashboard development, and KPI reporting, with a strong foundation in translating raw data into actionable business insights. Seeking an entry-level Data Analyst role to apply my analytical skills and support data-driven decision making.</p>
-            </div>
-        </section>
-
-        <!-- Technical Skills -->
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Languages & Tools</h3>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL (MySQL)</span>
-                        <span class="tag">Power BI</span>
-                        <span class="tag">Excel</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Libraries</h3>
-                    <div class="tags">
-                        <span class="tag">Pandas</span>
-                        <span class="tag">NumPy</span>
-                        <span class="tag">Matplotlib</span>
-                        <span class="tag">Seaborn</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Core Competencies</h3>
-                    <div class="tags">
-                        <span class="tag">Data Cleaning</span>
-                        <span class="tag">Data Modeling</span>
-                        <span class="tag">Data Visualization</span>
-                        <span class="tag">Dashboard Development</span>
-                        <span class="tag">ETL</span>
-                        <span class="tag">KPI Tracking</span>
-                        <span class="tag">Root Cause Analysis</span>
-                        <span class="tag">Machine Learning Fundamentals</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
         <section id="projects">
             <h2>Projects</h2>
-            <div class="projects-grid">
-
-                <!-- Added Resume Matcher Project -->
-                <div class="project-card" style="border-left-color: #2b4c7e;">
-                    <div class="project-header">
-                        <h3>AI/ML Resume to Job Description Matcher</h3>
-                        <span class="project-badge" style="background: #2b4c7e;">Python / NLP</span>
-                    </div>
-                    <ul>
-                        <li>Developed a machine learning script that parses text data from resumes and job descriptions using Natural Language Processing (NLP) techniques.</li>
-                        <li>Implemented Cosine Similarity algorithms to compute compatibility scores, helping automate structural screening processes.</li>
-                    </ul>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Financial Transaction Risk & Fraud Analytics Dashboard</h3>
-                        <span class="project-badge">Power BI</span>
-                    </div>
+            <div class="project-card">
+                <div class="project-header"><h3>Financial Transaction Risk & Fraud Analytics Dashboard</h3><span class="project-badge">Power BI</span></div>
+                <p>Built a Power BI dashboard analyzing 5,000+ records, reducing manual review effort.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-header"><h3>Banking Loan Data Analysis</h3><span class="project-badge">Python</span></div>
+                <p>Analyzed loan datasets using Pandas/NumPy to identify default risks.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-header"><h3>India General Election Results 2024</h3><span class="project-badge">Power BI</span></div>
+                <p>Built interactive Power BI dashboards for 540+ constituencies.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-header"><h3>Logistics Performance Dashboard</h3><span class="project-badge">Power BI</span></div>
+                <p>Monitored KPIs and delivery status using Power BI.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-header"><h3>Boost Converter & Line Robot</h3><span class="project-badge">Engineering</span></div>
+                <p>Designed high-gain converters and autonomous robots, enhancing efficiency.</p>
+            </div>
+        </section>
+        <section id="education">
+            <h2>Education & Certifications</h2>
+            <div class="info-card">
+                <p><strong>B.E. Electrical and Electronics Engineering</strong> - Saranathan College</p>
+                <p>Master Program in Data Analytics — FITA Academy</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
